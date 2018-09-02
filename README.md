@@ -10,7 +10,7 @@ After building the Crawling Robot I have made a few upgrades:
 Bluetooth Support
 ------
 
-The robot can now be controlled via Bluetooth.
+The robot can now be controlled via Bluetooth. In order for this to work properly it was necessary to use a small Power Distribution Board.
 
 Android App
 ------
