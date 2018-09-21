@@ -236,6 +236,7 @@ void loop()
 
 
           if(readyToExecute()) {
+          
           Serial.println("Waiting for radio signal");
           loopCounter = 0;
           readBluetooth(order);
@@ -326,9 +327,7 @@ void loop()
       }
     } 
 
-  
-
-writeBluetooth("Done and ready");
+ 
           
 
 //end of your code -----------------------------------------------------------
