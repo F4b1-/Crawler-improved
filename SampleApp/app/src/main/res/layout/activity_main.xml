@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:whatever="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="io.github.controlwear.app.MainActivity"
+    android:padding="16dp"
+    android:background="#a9b4bf"
+    >
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="io.github.controlwear.app.MainActivity"
+        android:padding="5dp"
+        >
+
+
+
+
+        <TextView
+            android:id="@+id/textView_angle_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0°"/>
+
+
+        <TextView
+            android:id="@+id/textView_strength_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView_angle_left"
+            android:text="0%"/>
+
+
+        <io.github.controlwear.virtual.joystick.android.JoystickView xmlns:custom="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/joystickView_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="15dp"
+            custom:JV_backgroundColor="#009688"
+            custom:JV_borderColor="#00796B"
+            custom:JV_borderWidth="8dp"
+            custom:JV_buttonColor="#FF6E40"
+            custom:JV_fixedCenter="true" />
+
+
+        <co.geeksters.radar.Radar
+            android:id="@+id/radar"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            whatever:center_pin_color="@color/black"
+            whatever:pins_color="@color/red"
+            whatever:pins_image="@drawable/pin"
+            whatever:pins_radius="20"
+            whatever:radar_image="@drawable/radar_background" />
+
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/buttonDance"
+            android:layout_toEndOf="@+id/joystickView_left"
+            android:text="Sit/Stand" />
+
+        <Button
+            android:id="@+id/buttonDance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/joystickView_left"
+            android:text="Dance" />
+
+        <Button
+            android:id="@+id/buttonFreeRoam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/button1"
+            android:layout_alignBottom="@+id/button1"
+            android:layout_toEndOf="@+id/button1"
+            android:text="Free Roam" />
+
+        <Button
+            android:id="@+id/buttonHeart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center"
+            android:layout_toEndOf="@+id/button1"
+            android:backgroundTint="?attr/colorButtonNormal"
+            android:drawableLeft="@drawable/heart"
+            android:gravity="center"
+            android:text="Light" />
+
+
+
+        <com.jraska.console.Console
+            android:id="@+id/console2"
+            android:layout_width="match_parent"
+            android:layout_height="400px"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/joystickView_left" />
+
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>
+
+
+

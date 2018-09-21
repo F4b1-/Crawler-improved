@@ -35,8 +35,8 @@
 
 //#define BLUETOOTH  //use bluetooth connection
 const float adjust_site[3] = { 100, 80, 42 };
-const float real_site[4][3] = { { 122, 68, 9 }, { 120, 58, 58 },
-                                { 98, 84, 44 }, { 115, 55, 55 }};
+const float real_site[4][3] = { { 122, 77, 7 }, { 125, 60, 50 },
+                                { 102, 84, 45 }, { 125, 55, 55 }};
 /* Servos --------------------------------------------------------------------*/
 //define 12 servos for 4 legs
 Servo servo[4][3];
@@ -91,8 +91,6 @@ const float turn_y0 = temp_b*sin(temp_alpha) - turn_y1 - length_side;
 boolean freeRoam = false;
 boolean lightOn = false;
 
-int trigPin = 10;    //Trig - green Jumper
-int echoPin = 13;    //Echo - yellow Jumper
 long duration, cm, inches;
 int order = -1;
 
@@ -110,8 +108,7 @@ static const unsigned long REFRESH_INTERVAL_EXECUTION = 300;
 void setup()
 {
 
- pinMode(trigPin, OUTPUT);
- pinMode(echoPin, INPUT);
+
 #ifdef INSTALL
   //initialize all servos
   for (int i = 0; i < 4; i++)
@@ -179,7 +176,7 @@ void setup()
 /*
  - loop function
  * ---------------------------------------------------------------------------*/
-
+/*
 void freeRoamingYeah() {
   
   // The sensor is triggered by a HIGH pulse of 10 or more microseconds.
@@ -216,7 +213,7 @@ void freeRoamingYeah() {
      
   
 }
-
+*/
 
 void loop()
 {
@@ -246,13 +243,14 @@ void loop()
      
 
           if(freeRoam) {
-            freeRoamingYeah();
-            /*long sonarDistance = getSonarDistance();
+          
+            long sonarDistance = getSonarDistance();
+            Serial.println(sonarDistance);
             if(sonarDistance > 20) {
-               step_forward(1);       
+               step_back(1);       
             } else {
-              turn_left(1);
-            }*/
+              turn_left(3);
+            }
             //String sonarDistanceInfo = "Free Roam! Current distance: " + String(sonarDistance);
             //writeBluetooth(sonarDistanceInfo.c_str());
           }
@@ -306,18 +304,13 @@ void loop()
             }
             break;
           case 8:
-           /* if(lightOn) {
+            if(lightOn) {
               changeLight(false);
               lightOn = false;
             } else {
               changeLight(true);
               lightOn = true;
-            } */
-            if(freeRoam) {
-              freeRoam = false;
-            } else {
-              freeRoam = true;
-            }
+            } 
           }
 
           rest_counter = 0;
@@ -333,13 +326,9 @@ void loop()
       }
     } 
 
-   if(freeRoam) {
-      delay(1000);
-    }
+  
 
-
-
-
+writeBluetooth("Done and ready");
           
 
 //end of your code -----------------------------------------------------------

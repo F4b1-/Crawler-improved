@@ -8,13 +8,16 @@ Adafruit_NeoPixel pixels = Adafruit_NeoPixel(1, 9, NEO_GRB + NEO_KHZ800);
 int btData;
 String inString;
 
-// int trigPin = 10;    //Trig - green Jumper
-// int echoPin = 13;    //Echo - yellow Jumper
+ int trigPin = 13;    //Trig - green Jumper
+ int echoPin = 10;    //Echo - yellow Jumper
 
 
 void setupBluetooth() {
   // The HC-06 defaults to 9600 according to the datasheet
   mySerial.begin(9600);
+
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
 
 /*  pixels.begin(); // This initializes the NeoPixel library.
   pixels.setPixelColor(0, pixels.Color(0,0,0));
@@ -58,6 +61,13 @@ void changeLight(boolean switchOn) {
 long getSonarDistance()
 {
 
+   // The sensor is triggered by a HIGH pulse of 10 or more microseconds.
+  // Give a short LOW pulse beforehand to ensure a clean HIGH pulse:
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(5);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
  
  
   // Read the signal from the sensor: a HIGH pulse whose

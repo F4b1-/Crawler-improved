@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://C:\cygwin64\home\fabia\joystick-spider\virtual-joystick-demo\JoystickDemo.iml" filepath="C:\cygwin64\home\fabia\joystick-spider\virtual-joystick-demo\JoystickDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android-radar/android-radar.iml" filepath="$PROJECT_DIR$/android-radar/android-radar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/virtual-joystick-demo.iml" filepath="$PROJECT_DIR$/virtual-joystick-demo.iml" />
+    </modules>
+  </component>
+</project>
