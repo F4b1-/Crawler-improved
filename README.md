@@ -17,3 +17,7 @@ Bluetooth Support
 ------
 
 The robot can now be controlled via Bluetooth. In order for this to work properly it was necessary to use a small Power Distribution Board.
+
+Free Roam Mode
+------
+Making use of one of the many inexpensive ultrasound sensors a free roam/object avoidance mode was implemented. 
