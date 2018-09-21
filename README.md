@@ -1,5 +1,5 @@
 # Crawler-improved
-Imporoved version of Sunfounder's Quadruped Crawling Robot.
+Improved version of Sunfounder's Quadruped Crawling Robot.
 
 ![Crawler](https://github.com/F4b1-/Crawler-improved/blob/master/crawler.jpg)
 
