@@ -15,7 +15,7 @@ The robot can now be controlled via Bluetooth. In order for this to work properl
 
 Android App
 ------
-An Android App is available to control the robot.
+You can now use the Android App available from this repo to control the robot.
 ![App](https://github.com/F4b1-/Crawler-improved/blob/master/screenshot_app.png)
 
 Python script
