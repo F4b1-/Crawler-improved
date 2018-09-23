@@ -8,15 +8,24 @@ Upgrades
 
 After building the Crawling Robot I have made a few upgrades:
 
+Bluetooth Support
+------
+
+The robot can now be controlled via Bluetooth. In order for this to work properly it was necessary to use a small Power Distribution Board.
+
 Android App
 ------
 An Android App is available to control the robot.
 ![App](https://github.com/F4b1-/Crawler-improved/blob/master/screenshot_app.png)
 
-Bluetooth Support
+Python script
 ------
-
-The robot can now be controlled via Bluetooth. In order for this to work properly it was necessary to use a small Power Distribution Board.
+You can also control the robot from your Computer using Bluetooth. Simply run the  python script.
+You will nedd to install the following dependencies:
+```
+pip install pybluez
+pip install pynput
+```
 
 Free Roam Mode
 ------
